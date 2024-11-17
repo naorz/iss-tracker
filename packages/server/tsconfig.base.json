@@ -1,0 +1,17 @@
+{
+  "exclude": ["node_modules", "dist", "build", "shared-types"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "typeRoots": ["node_modules/@types", "src/types"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@/types/*": ["src/types/*"],
+      "@/types": ["src/types/global.d.ts"],
+      "@/utils": ["src/utils"],
+      "@/utils/*": ["src/utils/*"],
+      "@/schema/*": ["src/schema/*"],
+      "@/services/*": ["src/services/*"],
+      "@/controllers/*": ["src/controllers/*"]
+    }
+  }
+}

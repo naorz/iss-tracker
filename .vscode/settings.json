@@ -1,0 +1,64 @@
+{
+  // https://code.visualstudio.com/docs/getstarted/settings
+  // git
+  "git.autofetch": true,
+
+  // ***************
+  // Code formatter
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+
+  "eslint.format.enable": true,
+  "eslint.codeActionsOnSave.mode": "all",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+
+  // ***************
+  // settings
+  "files.autoSave": "onFocusChange",
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    130
+  ],
+
+  // cSpell
+  "cSpell.language": "en",
+  "cSpell.userWords": ["peleswin", "peles"],
+  "cSpell.enableFiletypes": ["js", "javascript", "json", "typescript", "ts", "html", "css", "markdown", "md", "yaml"],
+
+  // ***************
+  // search and files
+  "files.exclude": {
+    "**/.vscode": false,
+
+    "**/.vs": true,
+    "**/.git": true,
+    "**/.idea": true,
+    "**/.DS_Store": true,
+    "**/.happypack": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/*.log": true,
+    "**/.idea": true,
+    "**/build": true,
+    "**/.vscode": true,
+    "**/coverage": true,
+    "**/.happypack": true,
+    "**/node_modules": true
+  }
+}

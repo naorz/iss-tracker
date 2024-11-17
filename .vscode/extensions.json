@@ -1,0 +1,68 @@
+{
+  "recommendations": [
+    // Essential
+    "eamodio.gitlens",
+    "mikestead.dotenv",
+    "redhat.vscode-yaml",
+    "formulahendry.code-runner",
+    "EditorConfig.EditorConfig",
+    "vscode-icons-team.vscode-icons",
+    "streetsidesoftware.code-spell-checker",
+    "Gruntfuggly.todo-tree",
+    "kisstkondoros.vscode-codemetrics",
+
+    // Docs
+    "marp-team.marp-vscode",
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-preview-github-styles",
+
+    // Frontend
+    "jock.svg",
+    "stylelint.vscode-stylelint",
+    "formulahendry.auto-rename-tag",
+    "vincaslt.highlight-matching-tag",
+    "styled-components.vscode-styled-components",
+
+    // JS/TS Testing
+    "vitest.explorer",
+    "Orta.vscode-jest",
+    "ms-playwright.playwright",
+
+    // JS/TS
+    "steoates.autoimport",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "wix.vscode-import-cost",
+    "christian-kohler.npm-intellisense",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "mattpocock.ts-error-translator",
+    "MylesMurphy.prettify-ts",
+
+    // Infra
+    "hashicorp.terraform",
+    "shakram02.bash-beautify",
+    "mads-hartmann.bash-ide-vscode",
+    "ivory-lab.jenkinsfile-support",
+    "timonwong.shellcheck",
+    "erd0s.terraform-autocomplete",
+    "4ops.terraform",
+
+    // AI
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+
+    // Dockers / Server / DB
+    "ms-vscode-remote.remote-containers",
+    "ms-azuretools.vscode-docker",
+    "Prisma.prisma",
+    "golang.go",
+
+    // Nice to have
+    // "Thinker.data-size-count",
+    // "drKnoxy.eslint-disable-snippets",
+    // "github.vscode-github-actions",
+    // "GitHub.vscode-pull-request-github",
+    // "VisualStudioExptTeam.intellicode-api-usage-examples",
+    // "johnpapa.vscode-peacock"
+  ]
+}

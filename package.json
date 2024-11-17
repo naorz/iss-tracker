@@ -1,0 +1,31 @@
+{
+  "name": "iss-tracker",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "npm run dev -w server",
+    "client": "npm run dev -w client",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:fix": "npm run lint -- --fix",
+    "refresh": "rm -rf node_modules && rm -f package-lock.json && npm i"
+  },
+  "keywords": [],
+  "author": "Naor",
+  "license": "MIT",
+  "description": "ISS Satellite Tracker",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "globals": "^15.11.0",
+    "@eslint/js": "^9.12.0",
+    "eslint": "9.12.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1",
+    "@peleswin/eslint-config-base": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14"
+  }
+}
