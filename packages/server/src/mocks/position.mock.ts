@@ -1,6 +1,18 @@
+import { faker } from '@faker-js/faker'
 import { ISSPosition } from 'iss-schema'
 
 let currentIndex = 0
+
+const generatePosition = (): ISSPosition => {
+  return {
+    message: 'success',
+    timestamp: faker.date.between({ from: '2022-01-01', to: new Date() }).getTime() / 1000,
+    iss_position: {
+      latitude: faker.location.latitude().toString(),
+      longitude: faker.location.longitude().toString(),
+    },
+  }
+}
 
 // can be generated with fakerjs
 const positionMockList: ISSPosition[] = [
@@ -40,6 +52,13 @@ const positionMockList: ISSPosition[] = [
     message: 'success',
   },
 ]
+
+const generateMockPosition = () => {
+  const morePositions = Array.from({ length: 30 }, () => generatePosition())
+  positionMockList.push(...morePositions)
+}
+
+generateMockPosition()
 
 
 export const getMockPosition = (): ISSPosition => {

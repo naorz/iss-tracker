@@ -1,1 +1,1 @@
-export * from './IssMap'
+export * from './IssMapWithTrail'

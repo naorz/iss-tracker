@@ -4,9 +4,11 @@ import { Icon } from 'leaflet'
 import { useEffect } from 'react'
 import { Marker, Popup } from 'react-leaflet'
 
+const ISS_ICON_SIZE = 46
+
 const issIcon = new Icon({
   iconUrl: 'iss.png',
-  iconSize: [32, 32],
+  iconSize: [ISS_ICON_SIZE, ISS_ICON_SIZE],
 })
 
 type ISSMarkerProps = {

@@ -11,6 +11,7 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.2.0",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
