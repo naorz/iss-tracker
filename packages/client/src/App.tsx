@@ -24,7 +24,7 @@ function App() {
 
   const Content = useCallback(() => {
     if (isServerAlive === null) return <Typography variant="h4">Checking server health...</Typography>
-    if (!isServerAlive) return <Typography variant="h4">Server is responding...</Typography>
+    if (!isServerAlive) return <Typography variant="h4">Server is not alive...</Typography>
     return <IssMap />
   }, [isServerAlive])
 
