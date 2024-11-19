@@ -1,32 +1,39 @@
 import axios from 'axios'
 import { ISSPosition, ISSPositionSchema, ISSPositionUpdateCb } from 'iss-schema'
-import { issApiUrl, issIntervalUpdatesSec, issUseAPI } from '@/config'
+import { issApiUrl, issPollingIntervalSeconds, issUseMock } from '@/config'
 import { logger } from '@/utils'
 import { getMockPosition } from '@/mocks/position.mock'
 
 
 export const getCurrentPosition = async (): Promise<ISSPosition> => {
-  if (!issUseAPI) {
-    logger.info('Using mock positions')
+  if (issUseMock) {
+    logger.warn('Using mock positions')
     return getMockPosition()
   }
   const response = await axios.get(issApiUrl)
   return ISSPositionSchema.parse(response.data)
 }
 
-export const sendCurrentPositionByInterval = (callback: ISSPositionUpdateCb, intervalMs = issIntervalUpdatesSec) => {
+/**
+ * @description Send current position by interval
+ * @param callback
+ * @param intervalMs
+ * @returns interval destructor function
+ */
+
+export const sendCurrentPositionByInterval = (callback: ISSPositionUpdateCb, intervalMs = issPollingIntervalSeconds) => {
   const intervalFn = async () => {
     try {
       const position = await getCurrentPosition()
       callback(position)
     } catch (error) {
-      clearInterval(currentInterval)
+      clearInterval(currentIntervalId)
       logger.error('[Interval] fetching ISS position:', error)
-      logger.error('[Interval] killed', currentInterval)
+      logger.error('[Interval] killed', currentIntervalId)
     }
   }
   intervalFn()
-  const currentInterval = setInterval(intervalFn, intervalMs * 1000)
+  const currentIntervalId = setInterval(intervalFn, intervalMs * 1000)
 
-  return () => clearInterval(currentInterval)
+  return () => clearInterval(currentIntervalId)
 }

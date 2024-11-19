@@ -1,6 +1,11 @@
 # ISS Tracker
 
-A real-time International Space Station tracking application that shows the current location of the ISS on a world map.
+A real-time International Space Station tracking application that shows the current location of the ISS on a world map.  
+
+> This project is for learning purposes.  
+> The API used for the ISS position is provided by the [open-notify.org](http://api.open-notify.org/iss-now.json)  
+> There is no really need for the server side to get the ISS position. It can be done directly from the client side.  
+> The server side is just for learning purposes 👨‍🏫👩‍🏫💻  
 
 ## Installation
 
@@ -22,25 +27,33 @@ A real-time International Space Station tracking application that shows the curr
 2. via websocket (socket.io)
    - ws://localhost:3000
   
-> Note: The implementation of the websocket was made just for fun (🧂🎸).  
-> The real-time tracking of the ISS is came from the API provided by the [open-notify.org](http://api.open-notify.org/iss-now.json)  
-> So it can be done at the client side without the need of the server and check the API every X seconds.  
-> Or make the API call from the server and use the local server to check with the API.  
+> Note: The websocket usage here for learning purposes only.  
+> The API used for the ISS position is provided by the [open-notify.org](http://api.open-notify.org/iss-now.json)  
+> There is no really need for the server side to get the ISS position. It can be done directly from the client side.  
+> The server side is just for learning purposes 👨‍🏫👩‍🏫💻  
 
-### Client implementation
-I used React, TypeScript, and Vite to create the client side of the application.  
-The client side is using the [react-leaflet](https://react-leaflet.js.org/) and [leaflet](https://leafletjs.com/) to show the map.  
-The client side is using the [socket.io-client](https://socket.io/docs/v4/client-api/) to connect to the server and get the ISS position. (again, just for fun 🧂🎸)  
+### Client Side
+
+Technologies:
+- React
+- TypeScript (using vite + react-ts template)
+- [Vite](https://vite.dev/guide/#scaffolding-your-first-vite-project)
+- [Leaflet](https://leafletjs.com/)
+- [React-Leaflet](https://react-leaflet.js.org/)
+- [Socket.io-client](https://socket.io/docs/v4/client-api/) - get real-time ISS position from the server - just for fun 🧂🌶️
+- [Axios](axios-http.com) - for the restful API - for health check api (just for fun 🧂🎸 - can be done with fetch API)
+- [Material-UI](https://mui.com/)
+
 
 ### Configurations
 The server and the client are using the `.env` file to get the configuration.  
 Available configurations:  
 | Name | Description | Default |
 |------|-------------|---------|
-| `PORT` | The port of the server | 3000 |
-| `ISS_USE_API` | default is `true`, if `false` the serve will use some mock data | true |
+| `PORT` | The port of the server | `3000` |
+| `ISS_USE_MOCK` | default is `false`, if `true` the serve will use some mock data | `false` |
 
-see `packages/server/config/index.ts` for more details.  
+See `packages/server/config/index.ts` for more details.  
 
 ## Demo ISS Tracker
 
